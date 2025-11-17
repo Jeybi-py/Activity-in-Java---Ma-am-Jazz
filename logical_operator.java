@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class OddEvenChecker {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = input.nextInt();
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+
+        input.close();
+    }
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your grade: ");
+        int grade = input.nextInt();
+
+        if (grade >= 75) {
+            System.out.println("You passed.");
+        } else {
+            System.out.println("You failed.");
+        }
+
+        input.close();
+}
+
