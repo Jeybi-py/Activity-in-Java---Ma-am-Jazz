@@ -1,24 +1,20 @@
 import java.util.Scanner;
 
-public class ExceptionExample {
-    public static void main(String[] args) {
-        
-        Scanner input = new Scanner(System.in);
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
 
+public class exceptionhandling {
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter a day of the week: ");
+    String input = scanner.nextLine().toUpperCase();
         try {
-            System.out.print("Enter a word: ");
-            String text = input.nextLine();
-
-            if (text.isEmpty()) {
-                throw new Exception("Input cannot be empty.");
-            }
-
-            System.out.println("You entered: " + text);
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        } finally {
-            input.close();
+        Day day = Day.valueOf(input);
+            System.out.println("Today is " + day);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid day entered: " + input);
         }
+    scanner.close();
     }
 }
